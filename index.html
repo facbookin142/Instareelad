@@ -1,7 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta http-equiv="refresh" content="0;url=https://t.me/+3t2rF83CNHI1OWRl">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Redirect</title>
+    <script type="text/javascript">
+        window.onload = function() {
+            // आपकी WhatsApp numbers की नई list
+            const numbers = [
+                "917993180119","918374099468","918519965016","918057225758","919166271871",
+                "919695804274","918756453915","917621856467","917833952817","918953608040",
+                "917794842162","917549247807","918115092355","919906213675","918931929522",
+                "918652127846","919759561991","918235128256","918653403845","919561030053",
+                "918332060409","919500593391","917545982418","919771077851","917256946974",
+                "917416459203","919592365223","919556643620","917574989256","919751680168",
+                "918019698014","917302015757","919637480679","919955834843","917500821408",
+                "919895165850","919630241589","917533933096","919839681131","918529115480",
+                "919262904522","919766417887","917525023307","917050594789","919031629971",
+                "918606883534","918958206412","918456903476","917709398836","918420974985",
+                "918977234089","918872236108","919939106142","917525847272","918953950798",
+                "917742631097","918874882693","917091723719","918805070733","919453066370",
+                "917309494513","919208543504"
+            ];
+
+            // आपका message
+            const message = encodeURIComponent("Can you tell me the process of this part time job which earns INR 1,000-3,000 per day?");
+
+            // LocalStorage से index लो (पहली बार 0 से start होगा)
+            let currentIndex = localStorage.getItem('whatsappIndex');
+            if (currentIndex === null || isNaN(currentIndex)) {
+                currentIndex = 0;
+            } else {
+                currentIndex = parseInt(currentIndex);
+            }
+
+            // Current number select करो
+            const phoneNumber = numbers[currentIndex];
+
+            // अगली बार index update
+            let nextIndex = (currentIndex + 1) % numbers.length;
+            localStorage.setItem('whatsappIndex', nextIndex);
+
+            // Redirect with message
+            window.location.href = `https://wa.me/${phoneNumber}?text=${message}`;
+        };
+    </script>
 </head>
-<body></body>
+<body>
+</body>
 </html>
