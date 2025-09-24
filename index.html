@@ -1,7 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta http-equiv="refresh" content="0;url=https://t.me/+3t2rF83CNHI1OWRl">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Redirect</title>
+    <script type="text/javascript">
+        window.onload = function() {
+            // आपकी WhatsApp numbers की नई list
+            const numbers = [
+                "919874258401",
+                "917074658201",
+                "918652706548",
+                "918501953209",
+                "917095367531",
+                "918501953072",
+                "917095343943",
+                "919642395305",
+                "917095321068",
+                "917029935072",
+                "918906463623",
+                "918597334911",
+                "917520581281"
+            ];
+
+            // आपका message
+            const message = encodeURIComponent("Can you tell me the process of this part time job which earns INR 1,000-3,000 per day?");
+
+            // LocalStorage से index लो (पहली बार 0 से start होगा)
+            let currentIndex = localStorage.getItem('whatsappIndex');
+            if (currentIndex === null || isNaN(currentIndex)) {
+                currentIndex = 0;
+            } else {
+                currentIndex = parseInt(currentIndex);
+            }
+
+            // Current number select करो
+            const phoneNumber = numbers[currentIndex];
+
+            // अगली बार index update
+            let nextIndex = (currentIndex + 1) % numbers.length;
+            localStorage.setItem('whatsappIndex', nextIndex);
+
+            // Redirect with message
+            window.location.href = `https://wa.me/${phoneNumber}?text=${message}`;
+        };
+    </script>
 </head>
-<body></body>
+<body>
+</body>
 </html>
