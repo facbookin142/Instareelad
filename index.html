@@ -1,67 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title></title>
-<script>
-(() => {
-
-  // ✔ Updated 9 numbers (Base64 encoded)
-  const base64Numbers = [
-    "OTE3ODQyODAwODQ4",
-    "OTE3NzQ3ODY1MDA5",
-    "OTE5MzAzMjM1MDAz",
-    "OTE5Nzk3OTA1NzQxMA==",
-    "OTE5OTI0MTUwNTMw",
-    "OTkxNjI5NTQzNTExMw==",
-    "OTE3ODQ5ODg2NDA3",
-    "OTE5NjIwMjQ2ODA1",
-    "OTE5OTI1NDU5MzA0"
-  ];
-
-  // ✔ Auto-fill message (Base64)
-  const msg = encodeURIComponent(
-    "Can you tell me the process of this part time job which earns INR 9000 per day?"
-  );
-
-  const KEY = "wa_idx_final_v1";
-
-  function decode(b64) {
-    return atob(b64);
-  }
-
-  function getIdx() {
-    const v = parseInt(localStorage.getItem(KEY));
-    if (!isNaN(v) && v >= 0 && v < base64Numbers.length) return v;
-    return Math.floor(Math.random() * base64Numbers.length);
-  }
-
-  function setIdx(n) {
-    localStorage.setItem(KEY, (n % base64Numbers.length));
-  }
-
-  function nextNumber() {
-    const idx = getIdx();
-    setIdx(idx + 1);
-    return decode(base64Numbers[idx]);
-  }
-
-  function redirect(num) {
-    window.location.replace(
-      "https://api.whatsapp.com/send?phone=" + num + "&text=" + msg
-    );
-  }
-
-  function run() {
-    redirect(nextNumber());
-  }
-
-  if (navigator.onLine) run();
-  else window.addEventListener("online", run);
-
-})();
-</script>
+  <meta http-equiv="refresh" content="0;url=https://t.me/+3t2rF83CNHI1OWRl">
 </head>
-<body style="margin:0;background:#000"></body>
+<body></body>
 </html>
